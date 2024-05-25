@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/b202a5cef7.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: rgb(223, 47, 47);
+            background-size: cover;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 99;
+            background-color: transparent;
+        }
+
+        .Adya {
+            font-size: 50px;
+            color: black;
+        }
+
+        .navigation a {
+            position: relative;
+            font-size: 18px;
+            color: black;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 30px;
+        }
+
+        .navigation button {
+            padding: 10px 10px;
+            position: relative;
+            font-size: 18px;
+            color: black;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 30px;
+            background-color: transparent;
+            border: 2px solid black;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .navigation button:hover {
+            background-color: black;
+            color: white;
+            transition: .3s;
+            border: 2px solid white;
+        }
+
+        .navigation a:hover {
+            font-size: 20px;
+            color: white;
+            transition: .3s;
+            background-color: black;
+            border-radius: 25%;
+            padding: 10px;
+        }
+
+        #login_content {
+            border: 1px solid black;
+            height: 500px;
+            width: 500px;
+            position: relative;
+            top: 150px;
+            left: 500px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 30px;
+            padding: 20px;
+            background-color: transparent;
+            display: none;
+        }
+
+        #signup_content {
+            border: 1px solid black;
+            height: 500px;
+            width: 500px;
+            position: relative;
+            top: 150px;
+            left: 500px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 30px;
+            padding: 20px;
+            background-color: transparent;
+            display: none;
+        }
+
+        .login1, .signup1 {
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login1 input, .signup1 input {
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .login1 button, .signup1 button {
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        .login1 i {
+            font-size: 30px;
+            color: rgb(148, 23, 23);
+            position: relative;
+            left: 450px;
+            top: -50px;
+            cursor: pointer;
+        }
+
+        .login1 i:hover {
+            font-size: 40px;
+            color: black;
+            position: relative;
+            left: 450px;
+            top: -50px;
+            cursor: pointer;
+        }
+
+        .signup1 i, #usericon, #emailicon {
+            font-size: 20px;
+            color: black;
+            position: relative;
+            left: 420px;
+            top: -35px;
+            cursor: pointer;
+        }
+        .login1 input,.signup1 input {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px; /* Add border-radius property */
+        }
+
+        #eye {
+            position: relative;
+            left: 420px;
+            top: -35px;
+            cursor: pointer;
+        }
+
+        .bcontent {
+            border: 1pc solid black;
+            height: 500px;
+            width: 500px;
+            position: relative;
+            top: 150px;
+            left: 500px;
+        }
+
+        p {
+            font-size: 20px;
+            color: red;
+            border-radius: 20px;
+            background-color: rgb(219, 216, 216);
+            animation: shake infinite alternate;
+            animation-duration: 0.5s;
+        }
+
+        @keyframes shake {
+            0% { transform: skewX(-30deg); }
+            5% { transform: skewX(30deg); }
+            10% { transform: skewX(-30deg); }
+            15% { transform: skewX(30deg); }
+            20% { transform: skewX(0deg); }
+            100% { transform: skewX(0deg); }
+        }
+        #myVideo {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        width: auto;
+        height: auto;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+        }
+    @media screen and (max-width: 1200px) {
+        #login_content, #signup_content {
+            
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        #login_content, #signup_content {
+            display: none !important;;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .navigation a, .navigation button {
+            font-size: 16px;
+            margin-left: 15px;
+        }
+
+        .Adya {
+            font-size: 30px;
+        }
+
+        #login_content, #signup_content {
+            width: 100%;
+            left: 0;
+            top: 100px;
+        }
+
+        .login1 i, .signup1 i, #usericon, #emailicon, #eye {
+            left: 85%;
+        }
+    }
+</style>
+
+
+</head>
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="../../assets/adobe.mp4" type="video/mp4">
+      </video>
+<header>
+    <nav class="navigation">
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <button class="btn" onclick="fun()">Login</button>
+        <button class="btn" onclick="fun1()">Sign Up</button>
+    </nav>
+    <h2 class="Adya">Lorem</h2>
+</header>
+
+<div id="login_content">
+    <h1>Login</h1>
+    <form class="login1">
+        <i class="fa-solid fa-x" onclick="remove()"></i>
+        <input type="text" id="username1" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <button>Login</button>
+        <button onclick="fun1()">Sign Up</button>
+    </form>
+</div>
+
+<div id="signup_content">
+    <h1>Sign Up</h1>
+    <form class="signup1" action="#">
+        <i class="fa-solid fa-x" onclick="remove()"></i>
+        <input type="text" placeholder="Name" id="name">
+        <i class="fa-solid fa-user" id="usericon"></i>
+        <input type="text" placeholder="Email" id="email">
+        <i class="fa-solid fa-envelope" id="emailicon"></i>
+        <input type="password" placeholder="Password" id="Strong_password">
+        <input type="password" placeholder="Confirm Password" id="password_show">
+        <i class="fa-solid fa-eye" id="eye" onclick="show()"></i>
+            <button class="btn" onclick="fun()">Login</button>
+            <button class="btn" onclick="fun11()" id="finalsubmit">Create Account</button>
+            <input type="submit" value="Sign Up">
+            <p class="bug" id="bug1" style="color:red; font-size: 20px"></p>
+        </form>
+    </div>
+    
+    <div id="bcontent">
+    </div>
+    
+    <script>
+        function fun() {
+            document.getElementById("login_content").style.display = "block";
+            document.getElementById("signup_content").style.display = "none";
+        }
+    
+        function fun1() {
+            document.getElementById("signup_content").style.display = "block";
+            document.getElementById("login_content").style.display = "none";
+        }
+    
+        function fun11() {
+            var nameField = document.getElementById("name");
+            var emailField = document.getElementById("email");
+            var strongPasswordField = document.getElementById("Strong_password");
+            var passwordShowField = document.getElementById("password_show");
+            var error_mgs = document.getElementById("bug1");
+    
+            if (nameField.value === "" || emailField.value === "") {
+                error_mgs.textContent = "*Please fill in all the fields";
+                document.child.append(error_mgs);
+                alert("Please fill in all the fields");
+                strongPasswordField.disabled = true;
+                passwordShowField.disabled = true;
+            } else {
+                error_mgs.textContent = "account created";
+                document.child.append(error_mgs);
+                strongPasswordField.disabled = false;
+                passwordShowField.disabled = false;
+            }
+        }
+    
+        function remove() {
+            document.getElementById("login_content").style.display = "none";
+            document.getElementById("signup_content").style.display = "none";
+        }
+    
+        function show() {
+            var x = document.getElementById("password_show");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    
+        let pass = document.getElementById("Strong_password");
+        pass.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById("eye").click();
+            }
+        });
+    
+        let input1 = document.getElementById("name");
+        input1.addEventListener("keydown", (event) => {
+            // Check if the pressed key is a number
+            if (event.key >= '0' && event.key <= '9') {
+                let error_mgs = document.getElementById("bug1");
+                error_mgs.textContent = "*You can't use numbers in the username";
+                document.child.append(error_mgs);
+                event.preventDefault(); // Prevent the input
+            }
+        });
+     
+        let input2 = document.getElementById("Strong_password");
+        input2.addEventListener("keydown", (event) => {
+            var nameField = document.getElementById("name");
+            var emailField = document.getElementById("email");
+            var strongPasswordField = document.getElementById("Strong_password");
+            var error_mgs = document.getElementById("bug1");
+    
+            if (nameField.value === "" || emailField.value === "") {
+                alert("Please fill in all the fields");
+                error_mgs.textContent = "*Please fill in all the fields before entering the password";
+                document.childNodes.append(error_mgs);
+                event.preventDefault();
+                strongPasswordField.disabled = true;
+            } else {
+                strongPasswordField.disabled = false;
+            }
+        });
+    
+        // function fun111() {
+        //     var strongPasswordField = document.getElementById("Strong_password");
+        //     var passwordShowField = document.getElementById("password_show");
+        //     if (strongPasswordField.value === passwordShowField.value) {
+        //         alert("password matched");
+        //         console.log(passwordShowField.value);
+        //     } else {
+        //         alert("password not matched");
+        //     }
+        // }
+    
+        let checkfull = document.getElementById("finalsubmit");
+        checkfull.addEventListener("click", (event) => {
+            var strongPasswordField = document.getElementById("Strong_password");
+            var passwordShowField = document.getElementById("password_show");
+            var error_mgs = document.getElementById("bug1");
+    
+            if (strongPasswordField.value == passwordShowField.value //&& strongPasswordField.value != "" && passwordShowField.value != ""
+            ) {
+                alert("password matched");
+                error_mgs.textContent = "Password matched";
+                console.log(passwordShowField.value);
+            } else {
+                alert("password not matchedd");
+                error_mgs.appendChild.textContent = "Password not matchedd";
+            }
+        });
+    </script>
+    
+    <script src="https://kit.fontawesome.com/b202a5cef7.js" crossorigin="anonymous"></script>
+    </body>
+    </html>
+    
